@@ -28,11 +28,14 @@ class FocusTimer(QWidget):
         hlayout.addWidget(self.timerTextBox)
         hlayout.addWidget(self.setTimeButton)
 
+        hlayout2 = QHBoxLayout()
+        hlayout2.addWidget(start)
+        hlayout2.addWidget(reset)
+
         layout = QVBoxLayout(self)
         layout.addWidget(self.label)
         layout.addLayout(hlayout)
-        layout.addWidget(start)
-        layout.addWidget(reset)
+        layout.addLayout(hlayout2)
 
     def start(self):
         self.timer.start(1000)
