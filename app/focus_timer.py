@@ -14,11 +14,14 @@ class FocusTimer(QWidget):
         self.timerTextBox.setValidator(QIntValidator(0, 999))
 
         self.label = QLabel("25:00")
-        self.label.setStyleSheet("font-size: 26px;")
+        self.label.setStyleSheet("font-size: 22px;")
 
         start = QPushButton("Start")
         reset = QPushButton("Reset")
         self.setTimeButton = QPushButton("Set Timer")
+
+        start.setFixedHeight(50)
+        reset.setFixedHeight(50)
 
         start.clicked.connect(self.start)
         reset.clicked.connect(self.reset)
@@ -26,6 +29,7 @@ class FocusTimer(QWidget):
 
         hlayout = QHBoxLayout()
         hlayout.addWidget(self.timerTextBox)
+        hlayout.addWidget(self.label)
         hlayout.addWidget(self.setTimeButton)
 
         hlayout2 = QHBoxLayout()
@@ -33,7 +37,6 @@ class FocusTimer(QWidget):
         hlayout2.addWidget(reset)
 
         layout = QVBoxLayout(self)
-        layout.addWidget(self.label)
         layout.addLayout(hlayout)
         layout.addLayout(hlayout2)
 

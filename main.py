@@ -1,7 +1,7 @@
 import sys
 import platform
 from PySide6.QtWidgets import QApplication
-from PySide6.QtGui import QIcon
+from PySide6.QtGui import QIcon, QGuiApplication, Qt
 from app.main_window import MainWindow
 
 app = QApplication(sys.argv)
@@ -14,10 +14,13 @@ elif current_os == "Darwin":  # macOS
 else:  # Linux / other
     icon_path = "assets/egg_icon.png"
 
-app.setWindowIcon(QIcon(icon_path))
+# Dark Mode
+QGuiApplication.styleHints().setColorScheme(Qt.ColorScheme.Dark)
 
+app.setWindowIcon(QIcon(icon_path))
 
 window = MainWindow()
 window.show()
 
 sys.exit(app.exec())
+
