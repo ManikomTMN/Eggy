@@ -1,4 +1,4 @@
-# Eggy
+![Eggy Logo](splash.png)\
 
 it's a task manager app thing that i made one day.
 
@@ -6,4 +6,4 @@ it's a task manager app thing that i made one day.
 `python main.py`
 
 Or if you want to turn it into an executable use\
-`pyinstaller --clean --noconsole --onefile --windowed --icon=assets/egg_icon.ico --add-data "assets;assets" main.py`
+`pyinstaller --clean --noconsole --onefile --windowed --icon=ICON.ico --add-data "ICON.ico" main.py`
